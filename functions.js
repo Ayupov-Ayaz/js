@@ -48,13 +48,3 @@ function pow(x, n){
     else
         return x;
 }
-
-// сумма чисел фибоначи
-function sum_fibo(x){
-    if(x == 1 || x == 2){
-        return 1;
-    }
-    
-    return sum_fibo(x - 1) + sum_fibo(x - 2);
-}
-alert(sum_fibo(7));
