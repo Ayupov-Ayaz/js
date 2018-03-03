@@ -41,3 +41,20 @@ ask('are you gay ?',
 var myFunc = new Function('a,b,c', 'return b * b - 4 * a * c');
 
 
+// Рекурсия
+function pow(x, n){
+    if(n != 1)
+        return x * pow(x, n - 1);    
+    else
+        return x;
+}
+
+// сумма чисел фибоначи
+function sum_fibo(x){
+    if(x == 1 || x == 2){
+        return 1;
+    }
+    
+    return sum_fibo(x - 1) + sum_fibo(x - 2);
+}
+alert(sum_fibo(7));
