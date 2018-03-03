@@ -8,11 +8,15 @@ function sum_to(x){
     return sum;
 }
 
-// вычисление суммы чисел в рекурсии
-function sum_to_r(x){
+/** вычисление суммы чисел в рекурсии
+    функция записана в формате Named Function Expression,
+    рекурсию желательно записывать именно так, что бы обезопасить от случаем,
+    когда наша функция в каком нибудь месте кода будет скопирована под другим именем
+*/
+var sum_to_r = function s(x){
     if(x == 1)
         return 1;    
-    return x + sum_to_r(x - 1);
+    return x + s(x - 1);
 }
 // вычисление суммы чисел по формуле суммы арифметической прогрессии
 function sum_to_ar(x){
@@ -20,12 +24,11 @@ function sum_to_ar(x){
 }
 
 // вычисление суммы чисел фибоначи
-function sum_fibo(x){
+var fibo = function f(x){
     if(x == 1 || x == 2){
         return 1;
     }
-
-    return sum_fibo(x - 1) + sum_fibo(x - 2);
+    return f(x - 1) + f(x - 2);
 }
 
 // вычисление факториала
@@ -36,3 +39,4 @@ function factorial(x){
     }
     return f;
 }
+
