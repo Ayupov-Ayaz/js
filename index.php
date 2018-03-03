@@ -8,5 +8,6 @@
 </head>
 <body>
 <script src='functions.js'></script>
+<script src='math.js'></script>
 </body>
 </html>

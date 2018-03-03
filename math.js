@@ -27,3 +27,12 @@ function sum_fibo(x){
 
     return sum_fibo(x - 1) + sum_fibo(x - 2);
 }
+
+// вычисление факториала
+function factorial(x){
+    var f = 1;
+    for(var i = 1; i <= x; i++){
+        f *= i;
+    }
+    return f;
+}
