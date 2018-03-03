@@ -26,14 +26,14 @@ var sayHello = age > 18 ? function (){alert('доступ открыт')} : func
 // функцию можно распечатать, если указать лишь его название:  alert(sayHello);
 
 // анонимная функция
+// ask('are you gay ?',
+//     function(){alert('Are you serios?')}, 
+//     function(){alert('Welcome to my home!')}
+// );
+
 function ask(question, yes, no){
     confirm(question) ? yes() : no() ;
 }
-
-ask('are you gay ?',
-    function(){alert('Are you serios?')}, 
-    function(){alert('Welcome to my home!')}
-);
 
 // Возможность создать функцию на лету с помощью конструкции new.
 // Первым параметром передается строка в которой через запятую перечисляются переменные
