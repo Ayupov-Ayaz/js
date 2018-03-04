@@ -1,24 +1,24 @@
 
 function say(from, message){
-    // значение переменной можно присваивать с помощью оператора или,
-    // такая запись равносильно указанию дефолтного значения в аргументах функции
-    var message = message || "текст не передан!";
-    var from = "**"+ from + "**";
-    alert(from + ": " + message);
+  // значение переменной можно присваивать с помощью оператора или,
+  // такая запись равносильно указанию дефолтного значения в аргументах функции
+  var message = message || "текст не передан!";
+  var from = "**"+ from + "**";
+  alert(from + ": " + message);
 }
 /**
- * Function Expression и Function Declaration
- * такие записи отличаются лишь тем, что  функция объявленная как Function Declaration,
- * создает интерпритатором до выполнения кода. Следовательно она доступна как до объявления функции,
- * так и после.
- */
+* Function Expression и Function Declaration
+* такие записи отличаются лишь тем, что  функция объявленная как Function Declaration,
+* создает интерпритатором до выполнения кода. Следовательно она доступна как до объявления функции,
+* так и после.
+*/
 // Function Declaration
 function shoMessage(message){
-    alert(message);
+  alert(message);
 }
- // Function Expression
+// Function Expression
 var shoMessage = function(message){
-   alert(message);
+ alert(message);
 };
 // Преимущество Function Expression:
 var age = 17;
@@ -43,9 +43,9 @@ var myFunc = new Function('a,b,c', 'return b * b - 4 * a * c');
 
 // Функция для сравнения
 function compare(x, y){
-    if(x == y)
-        return 0;
-    if(x > y)
-        return 1;
-    return -1;
+  if(x == y)
+    return 0;
+  if(x > y)
+    return 1;
+  return -1;
 }
