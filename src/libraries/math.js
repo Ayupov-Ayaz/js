@@ -40,3 +40,27 @@ function factorial(x){
     return f;
 }
 
+// Рекурсивная функция для возведения в степень числа
+function pow_rec(x, n) {
+  if(n < 0)
+    return NaN;
+    
+  if(n != 1)
+    return x * pow(x, n - 1);    
+  else
+    return x;
+}
+
+// Возведение в степень числа циклом
+function pow(x, n) {
+  if(n < 0) 
+    return NaN;
+
+  var result = x;
+  
+  for(var i = 1; i < n; i++) {
+    result *= x;   
+  }
+  return result;
+}
+

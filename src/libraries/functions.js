@@ -41,13 +41,6 @@ function ask(question, yes, no){
 var myFunc = new Function('a,b,c', 'return b * b - 4 * a * c');
 
 
-// Рекурсия
-function pow(x, n){
-    if(n != 1)
-        return x * pow(x, n - 1);    
-    else
-        return x;
-}
 // Функция для сравнения
 function compare(x, y){
     if(x == y)

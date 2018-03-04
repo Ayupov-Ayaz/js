@@ -1,2 +1,1 @@
-
-
+console.log(pow(2, -3));
