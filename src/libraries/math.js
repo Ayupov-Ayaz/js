@@ -55,10 +55,13 @@ function pow_rec(x, n) {
 
 // Возведение в степень числа циклом
 function pow(x, n) {
-  if(!isInteger(n) || !isPositiveInt(n)) {
+  if(!isInteger(n) || !isPositiveInt(n) || (x == 0 && n == 0)) {
     return NaN;
   }
-    
+  
+  if(n == 0 && x != 0)
+    return 1;
+
   var result = x;
   
   for(var i = 1; i < n; i++) {
@@ -74,6 +77,6 @@ function isInteger(num) {
 
 // Положительное ли число
 function isPositiveInt(num) {
-  return num > 0;
+  return num >= 0;
 }
 
