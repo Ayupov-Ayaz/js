@@ -12,7 +12,11 @@ describe("pow", function() {
   });
   
   it("При возведение в отрицательную степень результат NaN", function() {
-    assert(isNaN(pow(2,-1)));
+    assert(isNaN(pow(2,-2)));
+  })
+
+  it("При возведение в дробную степень результат NaN", function() {
+    assert(isNaN(pow(2,3.4)));
   })
 });
 

@@ -42,9 +42,11 @@ function factorial(x){
 
 // Рекурсивная функция для возведения в степень числа
 function pow_rec(x, n) {
-  if(n < 0)
+  if(!isInteger(n) || !isPositiveInt(n)){
+    console.log('nan');
     return NaN;
-    
+  }
+
   if(n != 1)
     return x * pow(x, n - 1);    
   else
@@ -53,14 +55,25 @@ function pow_rec(x, n) {
 
 // Возведение в степень числа циклом
 function pow(x, n) {
-  if(n < 0) 
+  if(!isInteger(n) || !isPositiveInt(n)) {
     return NaN;
-
+  }
+    
   var result = x;
   
   for(var i = 1; i < n; i++) {
     result *= x;   
   }
   return result;
+}
+
+// Целое ли число
+function isInteger(num) {
+  return (num ^ 0) === num;
+}
+
+// Положительное ли число
+function isPositiveInt(num) {
+  return num > 0;
 }
 
