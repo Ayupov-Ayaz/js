@@ -98,7 +98,15 @@ function pow(x, n) {
  * @param {any} n
  */
 function isNumeric(n) {
-  return !isNaN(parseInt(n)) && isFinite(n);
+  /** 
+   * isFinite -  преобразует аргумент к числу и возвращает true,
+   * если это не Infinity/-Infinity/NaN. Таким образом, правая часть отсеет
+   *  заведомо не-числа, но оставит такие значения как true/false/null  
+   * и пустую строку '', так как они корректно преобразуются в числа.
+   * Для их проверки нужна левая часть.
+   * Вызов parseFloat(true/false/null/'') вернёт NaN для этих значений.
+  */
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 /**
