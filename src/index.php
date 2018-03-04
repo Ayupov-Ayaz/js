@@ -7,8 +7,8 @@
     <title>Типо учим js</title>
 </head>
 <body>
-<script src='functions.js'></script>
-<script src='math.js'></script>
-<script src='index.js'></script>
+<script src='libraries/functions.js'></script>
+<script src='libraries/math.js'></script>
+<script src='libraries/index.js'></script>
 </body>
 </html>
