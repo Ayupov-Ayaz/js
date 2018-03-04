@@ -48,3 +48,11 @@ function pow(x, n){
     else
         return x;
 }
+// Функция для сравнения
+function compare(x, y){
+    if(x == y)
+        return 0;
+    if(x > y)
+        return 1;
+    return -1;
+}

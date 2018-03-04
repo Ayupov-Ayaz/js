@@ -9,5 +9,6 @@
 <body>
 <script src='functions.js'></script>
 <script src='math.js'></script>
+<script src='index.js'></script>
 </body>
 </html>
