@@ -125,3 +125,12 @@ function isPositiveInt(num) {
   return num >= 0;
 }
 
+/**
+ * Получение рандомного числа
+ * @param {number} min 
+ * @param {number} max 
+ */
+function randomNumber(min, max) {
+  return min + Math.floor(Math.random() * (max + 1 - min));
+}
+
