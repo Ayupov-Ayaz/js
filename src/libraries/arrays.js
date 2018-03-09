@@ -93,3 +93,26 @@ function setArrayNumbers() {
     numbers[numbers.length] = +currentElement;
   } 
 }
+
+function findInArray(array, value) {
+  for( var i = 0; i < array.length; i++) {
+    if(array[i] === value) return i;
+  }
+  return -1;
+}
+
+/**
+ * 
+ * @param {Array} array - Массив с числами
+ * @param {number} min - минимальный диапазон (вкл)
+ * @param {number} max - максимальный диапазон (вкл)
+ */
+function filterRange(array, min, max) {
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    if(array[i] >= min && array[i] <= max) {
+      newArray[newArray.length] = array[i];
+    }
+  }
+  return newArray;
+}
