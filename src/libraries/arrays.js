@@ -76,3 +76,20 @@ function getRandomElementInArray(array) {
   var index = randomNumber(0, array.length - 1);
   return array[index];
 }
+
+/**
+ * Функция заполнения массива через функцию prompt
+ * для выхода нужно передать не число
+ */
+function setArrayNumbers() {
+  var numbers = [];
+
+  while(true) {
+    var currentElement = prompt('Введите число?');
+    if(!isNumeric(currentElement)) {
+      return numbers;
+    }
+
+    numbers[numbers.length] = +currentElement;
+  } 
+}
