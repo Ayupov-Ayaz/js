@@ -139,3 +139,14 @@ function extractCurrencyValue(str) {
   if(!isNaN(number = parseInt(str))) return number;
   return parseInt(str.slice(1));
 }
+
+/**
+ * Проверка объекта на наличие свойств у объекта
+ * @param {object} obj 
+ */
+function isEmpty(obj) {
+  for(var key in obj) {
+    return false;
+  }
+  return true;
+}
