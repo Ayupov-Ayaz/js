@@ -116,3 +116,31 @@ function filterRange(array, min, max) {
   }
   return newArray;
 }
+
+/**
+ * Функция выводит простые числа в диапазоне от 1 до N
+ * @param {number} number - N
+ */
+function primes(number) {
+  var numbers = [];
+  for(var i = 0; i < number; i++) {
+    numbers[i] = i + 1;
+  } 
+
+  for(var i = 1; i < numbers.length - 1; i++) {
+    if(numbers[i] == 0) continue;
+    for(var j = i +1; j < numbers.length; j++){
+      if(numbers[j] != 0 && isInteger(numbers[j] / numbers[i])) {
+        numbers[j] = 0;
+      }
+    }
+  }
+
+  newNumbers = [];
+  for(var i = 0; i < numbers.length; i++) {
+    if(numbers[i] != 0) {
+      newNumbers[newNumbers.length] = numbers[i];
+    }
+  }
+  return newNumbers;
+}
