@@ -129,3 +129,13 @@ function trunCate(str, maxlength) {
   return newString.length < maxlength ? newString 
     : newString.slice(0, maxlength - 3) + '...';  
 }
+
+/**
+ * Функция принимающая строку в валюте и возвращающая число
+ * @param {string} str 
+ */
+function extractCurrencyValue(str) {
+  var number;
+  if(!isNaN(number = parseInt(str))) return number;
+  return parseInt(str.slice(1));
+}
