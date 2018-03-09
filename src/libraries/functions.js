@@ -118,3 +118,14 @@ function checkSpam(str) {
   }
   return false;
 }
+
+/**
+ * Функция для обрезания строки
+ * @param {string} str 
+ * @param {number} maxlength 
+ */
+function trunCate(str, maxlength) {
+  var newString = str.trim();
+  return newString.length < maxlength ? newString 
+    : newString.slice(0, maxlength - 3) + '...';  
+}
