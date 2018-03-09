@@ -49,3 +49,19 @@ function compare(x, y){
     return 1;
   return -1;
 }
+
+/**
+ * Функция возвращает все вхождения в строке в виде массива
+ * @param {string} str - переданная строка
+ * @param {string} find - что нужно найти
+ */
+function indexOfInString(str, find) {
+  str = str + '';
+  var position = -1;
+
+  var positions = new Array();
+  while((position = str.indexOf(find, position + 1)) != -1) {
+    positions.push(position);
+  }
+  return positions;
+}
