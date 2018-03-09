@@ -104,3 +104,17 @@ function ucFirst(str) {
   newString += str.slice(1);
   return newString; 
 }
+
+/**
+ * Функция проверяет строки на наличие запрещенных слов
+ * @param {string} str 
+ */
+function checkSpam(str) {
+  if(str.length < 1) return false;
+  var lowerStr = str.toLowerCase();
+  var spam = ['terror', 'XXX'];
+  for(var i = 0; i < spam.length; i++) {
+    if(lowerStr.indexOf(spam[i]) != -1) return true;
+  }
+  return false;
+}
