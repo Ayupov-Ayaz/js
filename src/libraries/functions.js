@@ -86,10 +86,21 @@ function compare(x, y){
 function indexOfInString(str, find) {
   str = str + '';
   var position = -1;
-
+  
   var positions = new Array();
   while((position = str.indexOf(find, position + 1)) != -1) {
     positions.push(position);
   }
   return positions;
+}
+/**
+ * Функция возвращает строку с заглавной буквой
+ * @param {string} str 
+ */
+function ucFirst(str) {
+  if(str.length < 1) return str;
+  
+  var newString = str.charAt(0).toUpperCase();
+  newString += str.slice(1);
+  return newString; 
 }
