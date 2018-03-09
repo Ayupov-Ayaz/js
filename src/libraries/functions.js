@@ -41,12 +41,40 @@ function ask(question, yes, no){
 var myFunc = new Function('a,b,c', 'return b * b - 4 * a * c');
 
 
-// Функция для сравнения
+/**
+ * Функция сравнения
+ * 0 - равны
+ * 1 - x больше чем y
+ * -1 - x меньше чем y 
+ * -2 - нельзя сравнить
+ * @param {any} x 
+ * @param {any} y 
+ */
 function compare(x, y){
+  // Сравнение массивов
+  if(Array.isArray(x) && Array.isArray(y)) {
+    if(x.length > y.length) return 1;
+    else if( x.length < y.length) return -1;
+     
+    for( var i = 0; i < x.length; i++) {
+      if(x[i] > y[i]) return 1;
+      else if(x[i] < y[i]) return -1;
+    }
+    return 0;
+  }
+  // Если передано массив и не массив
+  if(!Array.isArray(x) && Array.isArray(y) || Array.isArray(x) && !Array.isArray(y)) {
+    return -2;
+  }
+
   if(x == y)
     return 0;
   if(x > y)
     return 1;
+  // NaN нельзя сравнивать
+  if(isNaN(x) || isNaN(y)) {
+    return -2;
+  } 
   return -1;
 }
 
