@@ -94,6 +94,11 @@ function setArrayNumbers() {
   } 
 }
 
+/**
+ * Поиск элемента в массиве
+ * @param {Array} array 
+ * @param {any} value 
+ */
 function findInArray(array, value) {
   for( var i = 0; i < array.length; i++) {
     if(array[i] === value) return i;
@@ -123,10 +128,12 @@ function filterRange(array, min, max) {
  */
 function primes(number) {
   var numbers = [];
+  // Заполняем массив числами от 1 до N
   for(var i = 0; i < number; i++) {
     numbers[i] = i + 1;
   } 
 
+  // Перебираем наш массив в поисках простых чисел
   for(var i = 1; i < numbers.length - 1; i++) {
     if(numbers[i] == 0) continue;
     for(var j = i +1; j < numbers.length; j++){
@@ -135,7 +142,7 @@ function primes(number) {
       }
     }
   }
-
+  // Записываем простые числа в новый массив
   newNumbers = [];
   for(var i = 0; i < numbers.length; i++) {
     if(numbers[i] != 0) {
