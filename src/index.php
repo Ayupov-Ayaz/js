@@ -11,6 +11,8 @@
 <script src='libraries/functions.js'></script>
 <script src='libraries/math.js'></script>
 <script src='libraries/arrays.js'></script>
+<script src='libraries/object.js'></script>
+<script src='libraries/string.js'></script>
 <script src='libraries/index.js'></script>
 
 </body>
