@@ -255,7 +255,7 @@ function bubbleSort(array) {
     array[a] = array[b];
     array[b] = tmp;
   }
-  
+
   for(var i = array.length; i >= 0; i--) {
     for(var j = i - 1; j >= 0; j--) {
       if(array[j] > array[i]) {
@@ -263,4 +263,15 @@ function bubbleSort(array) {
       }
     }
   }
+}
+
+/**
+ * Функция по сортировке. Возвращает новый массив не влияя на начальный
+ * @param {Array} array 
+ * @param {string} funct имя функции которой будет проходить сортировка 
+ */
+function arraySorted(array, funct = 'selectSort') {
+  var newArray = array.slice();
+  funct(newArray);
+  return newArray;
 }
