@@ -93,17 +93,6 @@ function indexOfInString(str, find) {
   }
   return positions;
 }
-/**
- * Функция возвращает строку с заглавной буквой
- * @param {string} str 
- */
-function ucFirst(str) {
-  if(str.length < 1) return str;
-  
-  var newString = str.charAt(0).toUpperCase();
-  newString += str.slice(1);
-  return newString; 
-}
 
 /**
  * Функция проверяет строки на наличие запрещенных слов
