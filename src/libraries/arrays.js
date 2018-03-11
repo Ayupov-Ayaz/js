@@ -197,3 +197,18 @@ function getMaxSubSum(array) {
   }
   return maxSum;
 }
+
+/**
+ * Удаляет из массива все числа вне диапазона a..b
+ * @param {Array} array 
+ */
+function filterRangeInPlace(array, a , b) {
+  
+  for(var i = 0; i < array.length;) {
+    if(array[i] < a || array[i] > b) {
+      array.splice(i, 1);
+    }else{ 
+      i++;
+    }
+  }
+}
