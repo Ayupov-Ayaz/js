@@ -243,3 +243,24 @@ function selectSort(array, revert = false) {
     } // end for
   } // end for
 }
+
+/**
+ * Сортировка пузырьком
+ * @param {Array} array
+ */
+function bubbleSort(array) {
+
+  var swap = function (a, b) {
+    tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+  }
+  
+  for(var i = array.length; i >= 0; i--) {
+    for(var j = i - 1; j >= 0; j--) {
+      if(array[j] > array[i]) {
+        swap(i, j);
+      }
+    }
+  }
+}
