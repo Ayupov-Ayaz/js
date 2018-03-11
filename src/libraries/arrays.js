@@ -151,3 +151,49 @@ function primes(number) {
   }
   return newNumbers;
 }
+
+/**
+ * Функция для вычисления максимальной суммы подмассива
+ * Вариант имеет скорость On^2
+ * @param {Array} array 
+ */
+function getMaxSubSumLong(array) {
+  var maxSum = 0;
+  var localMax = 0;
+  for(var i = 0; i < array.length; i++) {
+    // если наше число меньше 0, то берем следующее
+    if(array[i] > 0) 
+      localMax = array[i];
+    else{
+      localMax = 0;
+      continue;
+    }
+      
+    // для случаев когда у нас есть максимальное число
+    if(array[i] > maxSum) maxSum = array[i];
+
+    for(var j = i + 1; j < array.length; j++) {
+      localMax += array[j];
+      if(localMax > maxSum) maxSum = localMax;
+    }
+  }
+
+  return maxSum;
+}
+
+/**
+ * Функция для вычисления максимальной суммы подмассива
+ * Скорость вычисления On
+ * @param {Array} array 
+ */
+function getMaxSubSum(array) {
+  var s = 0;
+  var maxSum = 0;
+
+  for(var i = 0; i < array.length; i++){
+    s += array[i];
+    if(s < 0) s = 0;
+    if(maxSum < s) maxSum = s;
+  }
+  return maxSum;
+}
