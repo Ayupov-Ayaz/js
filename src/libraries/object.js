@@ -42,3 +42,26 @@ function removeClass(obj, propertyName, className, separator = ' ') {
     obj[propertyName] = strClasses;
   }
 }
+
+/**
+ * Сортировка массива объектов по их свойству
+ * 
+ * @param {Array} array - Массив объектов 
+ * @param {string} property - свойство по которому нужно отсортировать
+ */
+function sortObjectsByProperty(array, property) {
+  
+  var swap = function(a,b) {
+    tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+  }
+
+  for(var i = 0; i < array.length; i++) {
+    for(var j = i + 1; j < array.length; j++) {
+      if(array[j][property] < array[i][property]) {
+        swap(i,j);
+      }
+    }
+  }
+}
