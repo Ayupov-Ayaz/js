@@ -212,3 +212,34 @@ function filterRangeInPlace(array, a , b) {
     }
   }
 }
+
+/**
+ * Сортировка выбором
+ * @param {Array} array массив для сортировки
+ * @param {bool} revert если передано true, то сортирует в обратной
+ *  последовательности
+ */
+function selectSort(array, revert = false) {
+
+  var swap = function(a,b) {
+    tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+  }
+
+  for(var i = 0; i < array.length; i++) {
+    for(var j = i + 1; j < array.length; j++) {
+
+      if(revert){
+        if(array[i] < array[j]) {
+          swap(i, j);
+        }
+      }else{
+        if(array[i] > array[j]) {
+          swap(i, j);
+        }
+      }
+
+    } // end for
+  } // end for
+}
