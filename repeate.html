@@ -29,5 +29,19 @@
 		return false;
 	}
 
+	function truncate(str) {
+		var maxLength = 10;
+		if(str.length > maxLength) {
+			str = str.slice(0, maxLength) + '...';
+		}
+		return str;
+	}
 	
+	function extractCurrencyValue(str) {
+		if(! isNumeric(str)) {
+			return parseFloat(str.slice(1));
+		} else {
+			return parseFloat(str);
+		}
+	}
 </script>
