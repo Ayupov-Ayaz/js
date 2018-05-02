@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	function isNumeric(n) {
+		return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+
+	function findSubStr(str, subStr) {
+		var indexes = Array();
+		var pos = -1;
+		while((pos = str.indexOf(subStr, ++pos)) != -1)  {
+			indexes.push(pos);
+		}
+		return indexes;
+	}
+
+	function firstCharUpperCase(str) {
+		var firstChar = str.charAt(0).toUpperCase();
+		str = firstChar + str.slice(1);
+		return str;
+	}
+
+	function checkSpam(str) {
+		var spamValues = ['viagra', 'xxx'];
+		var str = str.toLowerCase();
+		for(var i = 0; i < spamValues.length; i++) {
+			if(str.indexOf(spamValues[i]) != -1) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	
+</script>
