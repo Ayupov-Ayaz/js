@@ -16,5 +16,15 @@
 <script src='libraries/list.js'></script>
 <script src='libraries/index.js'></script>
 
+<?php
+
+    function __autoload($className)
+    {
+        $partsOfClass = explode('\\', $className);
+        require (__DIR__ . '/'. implode(DIRECTORY_SEPARATOR, $partsOfClass) . '.php');
+    }
+
+?>
+
 </body>
 </html>
