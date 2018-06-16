@@ -2,24 +2,12 @@
 
 
 namespace app\models\Entity;
-use app\models\EntityBuilder;
 
-class Entity
+abstract class  Entity
 {
 
     private $id;
     private $name;
-
-    /**
-     * Entity constructor.
-     * @param EntityBuilder $builder
-     */
-    public function __construct(EntityBuilder $builder)
-    {
-        $this->id = $builder->getId();
-        $this->name = $builder->getName();
-    }
-
 
     /**
      * @return int

@@ -9,10 +9,9 @@ class Product extends Entity {
 
     public function __construct(ProductBuilder $builder)
     {
-        parent::__construct($builder);
-
+        $this->setId($builder->getId());
+        $this->setName($builder->getName());
         $this->price = $builder->getPrice();
-
     }
 
     /**

@@ -3,10 +3,24 @@
 namespace app\models;
 use app\models\Entity\Product;
 
-class ProductBuilder extends EntityBuilder
+class ProductBuilder implements iBuilder
 {
 
-    private  $price;
+    private $id;
+    private $name;
+    private $price;
+
+    public function id(int $id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function name(string $name)
+    {
+        $this->name = $name;
+        return $this;
+    }
 
     public function price(float $price) {
         $this->price = $price;
@@ -14,7 +28,22 @@ class ProductBuilder extends EntityBuilder
     }
 
     /**
-     * @return mixed
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @return float
      */
     public function getPrice()
     {
