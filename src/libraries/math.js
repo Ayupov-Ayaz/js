@@ -134,3 +134,12 @@ function randomNumber(min, max) {
   return min + Math.floor(Math.random() * (max + 1 - min));
 }
 
+/**
+ * Возвращает десятичную часть числа
+ * @param num
+ * @returns {number}
+ */
+function isDecimal(num) {
+  var result =   num - parseInt(num);
+  return Math.round(result * 1000) / 1000;
+}
