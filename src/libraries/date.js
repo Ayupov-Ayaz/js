@@ -36,3 +36,14 @@ function getWeek(format, location) {
         return ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
     }
 }
+
+/**
+ * Получить число последнего дня месяца
+ * @param year
+ * @param month
+ * @returns {number}
+ */
+function getLastDayOfMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+}
+
