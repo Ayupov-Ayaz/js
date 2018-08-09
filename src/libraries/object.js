@@ -65,3 +65,17 @@ function sortObjectsByProperty(array, property) {
     }
   }
 }
+
+/**
+ * Определяет пустой ли объект
+ * @param obj
+ * @returns {boolean}
+ */
+function isEmpty(obj) {
+  var count = 0;
+  for(var propery in obj) {
+    count++;
+  }
+  if(count === 0) return true;
+  return false;
+}
