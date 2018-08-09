@@ -47,3 +47,10 @@ function getLastDayOfMonth(year, month) {
     return new Date(year, month + 1, 0).getDate();
 }
 
+/**
+ * Получить сколько секунд прошло с начала текущего дня
+ * @returns {number}
+ */
+function getSecondsToday() {
+    return  Date.now() / 1000 ^ 0;
+}
