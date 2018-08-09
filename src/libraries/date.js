@@ -54,3 +54,13 @@ function getLastDayOfMonth(year, month) {
 function getSecondsToday() {
     return  Date.now() / 1000 ^ 0;
 }
+
+/**
+ * Получить секунды до нового дня
+ * @returns {number}
+ */
+function getSecondsTomorrow() {
+    var today = new Date();
+    var tommorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+    return (tommorrow - today) / 1000 ^ 0;
+}
