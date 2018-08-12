@@ -77,3 +77,27 @@ function getDateAgo(date, days) {
     copyDate.setDate(copyDate.getDate() - days);
     return copyDate;
 }
+
+/**
+ * Возвращает отформатированную дату
+ * @param date
+ * @param format
+ * @returns {string}
+ */
+function formatDate(date, format) {
+    var _date = date.getDate();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+
+    if(month < 10) {
+        month = '0'+month;
+    }
+    switch (format) {
+        case 'dd.mm.YYYY':
+        case 'dd.mm.YY':
+            return _date + '.' + month + '.' + year;
+
+        default:
+            return  date;
+    }
+}
