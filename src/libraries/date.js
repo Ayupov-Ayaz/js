@@ -64,3 +64,16 @@ function getSecondsTomorrow() {
     var tommorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
     return (tommorrow - today) / 1000 ^ 0;
 }
+
+
+/**
+ * Получить дату на сколько-то дней позже указанной
+ * @param date
+ * @param days
+ * @returns {Date}
+ */
+function getDateAgo(date, days) {
+    var copyDate = new Date(date);
+    copyDate.setDate(copyDate.getDate() - days);
+    return copyDate;
+}
