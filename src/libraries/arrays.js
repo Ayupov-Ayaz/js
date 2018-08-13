@@ -275,3 +275,14 @@ function arraySorted(array, funct = 'selectSort') {
   funct(newArray);
   return newArray;
 }
+
+/**
+ * функция для сортировки
+ * @param fieldName
+ * @returns {function(*, *): number}
+ */
+function byField(fieldName) {
+    return function(a, b) {
+        return a[fieldName] > b[fieldName] ? 1 : -1;
+    }
+}
