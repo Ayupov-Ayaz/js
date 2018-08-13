@@ -18,4 +18,32 @@ function makeCounter() {
      }
 
      return counter;
+/**
+ * Создание буфера
+ * @returns {Function}
+ */
+function makeBuffer() {
+    var buffer = {};
+
+    function currentBuffer(key, value) {
+        if(key === undefined) {
+            return buffer;
+        } else if(value === undefined) {
+            return buffer[key];
+        } else {
+            buffer[key] = value;
+        }
+    }
+
+    currentBuffer.clear = function(key) {
+        if(key === undefined) {
+            buffer = {};
+        } else if(key in buffer) {
+            delete buffer[key];
+        }
+
+    }
+    return currentBuffer;
+
+
 }
