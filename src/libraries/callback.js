@@ -58,6 +58,30 @@ function makeBuffer() {
 
     }
     return currentBuffer;
-
-
 }
+
+/**
+ * Создает калькулятор
+ * @returns {calculator}
+ */
+function makeCalculator() {
+    var a, b;
+    var calculator = function(){};
+
+    var read = function() {
+        this.a = parseInt(prompt('Введите a =', '0'));
+        this.b = parseInt(prompt('Введите b =', '0'));
+    };
+    var sum = function() {
+        return this.a + this.b;
+    };
+
+    var mul = function () {
+        return this.a * this.b;
+    };
+
+    calculator.read = read;
+    calculator.sum = sum;
+    calculator.mul = mul;
+    return calculator;
+};
