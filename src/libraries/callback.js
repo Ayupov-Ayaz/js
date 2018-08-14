@@ -22,14 +22,27 @@ function makeCounter() {
 
 /**
  * Пример работы callback function
- * вызов работает так: sum(a)(b)
+ * вызов работает так: sum(a)(b)(c)(d)
  * @param a
  * @returns {function(*): *}
  */
 function sum(a) {
-    return function(b) {
-        return a + b;
+    var currentSum = a;
+
+    function s(b) {
+        currentSum += b;
+        return s;
     }
+
+    s.toString = function() {
+        return currentSum;
+    };
+
+    s.valueOf = function() {
+        return currentSum;
+    };
+
+    return s;
 }
 
 /**
