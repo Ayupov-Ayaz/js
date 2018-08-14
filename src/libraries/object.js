@@ -79,3 +79,28 @@ function isEmpty(obj) {
   if(count === 0) return true;
   return false;
 }
+
+/**
+ * Функция создает объект калькулятор
+ */
+function makeCalculator() {
+    var calculator = {};
+    calculator.a = 0;
+    calculator.b = 0;
+
+    // functions
+    calculator.read = function() {
+        this.a = parseInt(prompt('Введите a=', '0'));
+        this.b = parseInt(prompt('Введите b=', '0'));
+    };
+
+    calculator.sum = function() {
+        return this.a + this.b;
+    };
+
+    calculator.mul = function() {
+        return this.a * this.b;
+    };
+
+    return calculator;
+}
