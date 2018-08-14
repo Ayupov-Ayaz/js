@@ -286,3 +286,43 @@ function byField(fieldName) {
         return a[fieldName] > b[fieldName] ? 1 : -1;
     }
 }
+
+/**
+ * Фильтрует массив и возвращает новый
+ * @param array
+ * @param func - функция по которому нужно отфильтровать
+ * @returns {Array}
+ */
+function filter(array, func) {
+  var result = [];
+  for(var i = 0; i < array.length; i++) {
+    var val = array[i];
+    if(func(val)) {
+      result.push(val);
+    }
+  }
+  return result;
+}
+
+/**
+ * Принадлежит ли x промежутку от а до b
+ * @param a
+ * @param b
+ * @returns {function(*): boolean}
+ */
+function inBetween(a, b) {
+  return function (x) {
+    return x >= a && x <= b;
+  }
+}
+
+/**
+ * Вхождение в массиве
+ * @param arr
+ * @returns {Function}
+ */
+function inArray(arr) {
+  return function (x) {
+    return arr.indexOf(x) !== -1;
+  }
+}
