@@ -98,3 +98,42 @@ function makeCalculator() {
     calculator.mul = mul;
     return calculator;
 };
+
+/**
+ * Расширяемый калькулятор
+ * для передачи нового метода необходимо вызвать функцию addMethod()
+ *
+ * ПРИМЕР:
+ * var calculator = new PowerCalculator;
+ * calculator.addMethod('**', function(a,b) {
+ *      return pow(a, b);
+ *  });
+ * @constructor
+ */
+function PowerCalculator() {
+    var methods = {
+        '+':function(a,b) {
+            return a + b;
+        },
+        '-':function(a,b) {
+            return a -b;
+        }
+    };
+
+    this.calculate = function(operation) {
+        var arr = operation.split(' ');
+        var a = arr[0];
+        var op = arr[1];
+        var b = arr[2];
+
+        if(!methods && !isInteger(a) && !isInteger(b)) {
+            return NaN;
+        }
+        return methods[op](parseInt(a),parseInt(b));
+
+    };
+
+    this.addMethod = function(operator, func) {
+        methods[operator] = func;
+    }
+}
