@@ -104,3 +104,22 @@ function makeCalculator() {
 
     return calculator;
 }
+
+/**
+ * Создание объекта калькулятор через конструктор
+ * @constructor
+ */
+function Calculator() {
+    this.read = function() {
+        this.a = parseInt(prompt('Введите а=','0'));
+        this.b = parseInt(prompt('Введите b=','0'));
+    };
+
+    this.sum = function() {
+        return this.a + this.b;
+    };
+
+    this.mul = function() {
+        return this.a * this.b;
+    }
+}
