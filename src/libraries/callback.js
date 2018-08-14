@@ -18,6 +18,20 @@ function makeCounter() {
      }
 
      return counter;
+}
+
+/**
+ * Пример работы callback function
+ * вызов работает так: sum(a)(b)
+ * @param a
+ * @returns {function(*): *}
+ */
+function sum(a) {
+    return function(b) {
+        return a + b;
+    }
+}
+
 /**
  * Создание буфера
  * @returns {Function}
