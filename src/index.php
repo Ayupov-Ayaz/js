@@ -16,6 +16,7 @@
 <script src='libraries/list.js'></script>
 <script src='libraries/date.js'></script>
 <script src='libraries/callback.js'></script>
+<script src='classes/User.js'></script>
 <script src='libraries/index.js'></script>
 
 <?php
