@@ -137,3 +137,17 @@ function PowerCalculator() {
         methods[operator] = func;
     }
 }
+
+/**
+ * Универсальная функция для взаимствования функций
+ * @param func
+ * @param arg1
+ * @param arg2
+ * @returns {*}
+ */
+function applyAll(func, arg1, arg2) {
+    var args = [].slice.call(arguments);
+    var func = args[0];
+    var args = args.slice(1);
+    return func.apply(null, args);
+}
