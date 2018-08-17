@@ -53,6 +53,9 @@ function CoffeeMachine() {
 
     this.run = function() {
         timeoutId = null;
+        if(!this._enabled) {
+            throw new Error("Кофеварка выключена");
+        }
         timeoutId = setTimeout(function(){
             onReady();
         }, getBoilTime());
