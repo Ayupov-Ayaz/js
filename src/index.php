@@ -17,6 +17,9 @@
 <script src='libraries/date.js'></script>
 <script src='libraries/callback.js'></script>
 <script src='classes/User.js'></script>
+<script src='classes/Machine.js'></script>
+<script src='classes/CoffeeMachine.js'></script>
+<script src='classes/Fridge.js'></script>
 <script src='libraries/index.js'></script>
 
 <?php
