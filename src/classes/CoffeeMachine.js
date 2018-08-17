@@ -31,16 +31,25 @@ function CoffeeMachine() {
         alert('Кофе готово!');
     };
 
-    // переопределение методов родителя
-    var parentEnable = this.enable;
-
     this.isRunning = function() {
         return !!timeoutId;
+
     };
 
+    // переопределение методов родителя
+    var parentEnable = this.enable;
     this.enable = function () {
         parentEnable();
         console.log('enable() in CoffeeMachine');
+    };
+
+    var parentDisable = this.disable;
+    this.disable = function() {
+        parentDisable();
+        if(timeoutId) {
+            clearTimeout(timeoutId);
+            timeoutId = null;
+        }
     };
 
     function getBoilTime() {
