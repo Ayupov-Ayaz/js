@@ -85,10 +85,32 @@ function getDateAgo(date, days) {
  * @returns {string}
  */
 function formatDate(date, format) {
-    var _date = date.getDate();
-    var year = date.getFullYear();
-    var month = date.getMonth();
+    let _date;
+    let month;
+    let year;
 
+    let ifObjectDate = function(oDate) {
+        _date = oDate.getDate();
+        year = oDate.getFullYear();
+        month = oDate.getMonth();
+    };
+
+    let ifArrayDate = function(aDate) {
+        year = +aDate[0];
+        month = +aDate[1];
+        _date = +aDate[2];
+    };
+    if(typeof date === 'string') {
+        let arr = date.split('-');
+        ifArrayDate(arr);
+    } else if(date instanceof Date) {
+        ifObjectDate(date);
+    } else if(Array.isArray(date)) {
+       ifArrayDate(date);
+    } else if(isNumeric(date)) {
+        let newDate = new Date(date);
+        ifObjectDate(newDate);
+    }
     if(month < 10) {
         month = '0'+month;
     }
