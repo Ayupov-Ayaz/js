@@ -20,17 +20,7 @@
 <script src='classes/Machine.js'></script>
 <script src='classes/CoffeeMachine.js'></script>
 <script src='classes/Fridge.js'></script>
-<script src='libraries/index.js'></script>
-
-<?php
-
-    function __autoload($className)
-    {
-        $partsOfClass = explode('\\', $className);
-        require (__DIR__ . '/'. implode(DIRECTORY_SEPARATOR, $partsOfClass) . '.php');
-    }
-
-?>
+<script src='index.js'></script>
 
 </body>
 </html>
